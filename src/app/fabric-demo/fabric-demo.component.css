@@ -1,0 +1,120 @@
+.canvas-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  height:90vh;
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 200px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.toolbar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+.toolbar-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+  margin: 2px 0;
+}
+
+button:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:active {
+  background: #004085;
+  transform: translateY(0);
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+canvas {
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 90% !important;
+  height: 100% !important;
+}
+
+.color-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color-button::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.undo-redo-group {
+  display: flex;
+  gap: 8px;
+}
+
+.undo-redo-group button {
+  flex: 1;
+}
+
+.save-button {
+  background: #28a745;
+}
+
+.save-button:hover {
+  background: #218838;
+}
+
+.save-button:active {
+  background: #1e7e34;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

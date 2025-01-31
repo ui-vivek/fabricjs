@@ -1,0 +1,39 @@
+<div class="canvas-container">
+  <div class="toolbar">
+    <div class="toolbar-group">
+      <div class="undo-redo-group">
+        <button (click)="undo()">Undo</button>
+        <button (click)="redo()">Redo</button>
+      </div>
+    </div>
+
+    <div class="toolbar-group">
+      <button (click)="addRectangle()">Add Rectangle</button>
+      <button (click)="addCircle()">Add Circle</button>
+      <button (click)="addTriangle()">Add Triangle</button>
+      <button (click)="addEllipse()">Add Ellipse</button>
+      <button (click)="addLine()">Add Line</button>
+    </div>
+
+    <div class="toolbar-group">
+      <input type="text" [(ngModel)]="customText" placeholder="Enter custom text" />
+      <button (click)="addCustomText(customText)">Add Text</button>
+    </div>
+
+    <div class="toolbar-group">
+      <button class="color-button" (click)="changeObjectColor('red')">Red</button>
+      <button (click)="rotateObject(15)">Rotate +15°</button>
+      <button (click)="groupObjects()">Group Selected</button>
+    </div>
+
+    <div class="toolbar-group">
+      <button (click)="removeSelectedObject()">Remove Selected</button>
+      <button (click)="clearCanvas()">Clear Canvas</button>
+      <button class="save-button" (click)="saveCanvasAsImage()">Save as Image</button>
+    </div>
+  </div>
+
+  <div class="canvas-wrapper">
+    <canvas #canvasElement></canvas>
+  </div>
+</div>
