@@ -3,6 +3,11 @@ import * as fabric from 'fabric';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// Add event types
+interface FabricEvent {
+  target: fabric.Object;
+}
+
 interface CanvasAction {
   type: 'add' | 'remove' | 'modify';
   object: fabric.Object;
@@ -32,16 +37,15 @@ export class FabricDemoComponent implements AfterViewInit {
       backgroundColor: '#f0f0f0',
     });
 
-    // Track object additions
-    this.canvas.on('object:added', (e) => {
+    // Add proper typing to event handlers
+    this.canvas.on('object:added', (e: FabricEvent) => {
       if (e.target) {
         this.history.push({ type: 'add', object: e.target });
         this.redoStack = [];
       }
     });
 
-    // Track object removals
-    this.canvas.on('object:removed', (e) => {
+    this.canvas.on('object:removed', (e: FabricEvent) => {
       if (e.target && !this.isUndoRedoAction) {
         this.history.push({ type: 'remove', object: e.target });
         this.redoStack = [];
